@@ -7,7 +7,4 @@ import com.luan.livraria.domain.Livro;
 
 @Repository
 public interface LivroRepository extends JpaRepository<Livro, Integer>{
-	
-	
-
 }
