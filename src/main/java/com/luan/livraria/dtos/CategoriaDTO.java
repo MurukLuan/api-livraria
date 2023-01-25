@@ -2,6 +2,10 @@ package com.luan.livraria.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.luan.livraria.domain.Categoria;
 
 public class CategoriaDTO implements Serializable{
@@ -9,7 +13,13 @@ public class CategoriaDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	
+	@NotEmpty(message = "Campo nome é obrigatório!")
+	@Length(min = 3 , max = 75, message = "O campo nome deve ter entre 3 a 75 caracteres.")
 	private String nome;
+	
+	@NotEmpty(message = "Campo descrição é obrigatória!")
+	@Length(min = 3 , max = 200, message = "O campo descrição deve ter entre 3 a 200 caracteres.")
 	private String descricao;
 
 	public CategoriaDTO() {
